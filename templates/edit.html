@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+    <h1>Edit Rating</h1>
+
+    <form method="POST" action="{{ url_for('edit') }}">
+        {{ form.csrf_token }}
+        <p>
+        {{ form.change_rating.label }} <br> {{ form.change_rating(size=30) }}
+        {% for err in form.change_rating.errors %}
+        <span style="color: red;">{{ err }}</span>
+        {% endfor %}
+        </p>
+        {{ form.change }}
+    </form>
+    
+</body>
+</html>
